@@ -104,3 +104,7 @@ document.getElementById("whatsappForm").addEventListener("submit", function (e) 
 
       window.open(whatsappURL, "_blank");
     });
+ 
+
+     const currentYear = new Date().getFullYear();
+  document.getElementById("copyright").textContent = `© ${currentYear} PropertyMart. All rights reserved.`;

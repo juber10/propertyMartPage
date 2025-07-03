@@ -172,7 +172,7 @@ header ul.is-sticky li a.active {
 
 /* start: hero section styles */
 #hero {
-    background: url(/pexels-pixabay-302769.jpg) center center no-repeat;
+    background: url(/imperial.jpeg) center center no-repeat;
     background-size: cover;
     position: absolute;
     top: 0;
@@ -664,30 +664,34 @@ footer .footer-subscribe ul li:first-child {
     margin-left: 0;
 }
 
+footer .footer-subscribe ul li a {
+    color: #fff;
+}
     .facebook { 
-        background-color: #3b5998; 
+        background-color: #777575; 
         padding: 10px;
         border-radius: 30px;
     }
     .instagram { 
-        background-color: #e4405f;
+        background-color: #777575;
         padding: 10px;
         border-radius: 30px;
      }
     .linkedin  { 
-        background-color: #0077b5; 
+        background-color: #777575; 
          padding: 10px;
         border-radius: 30px;
     }
     .twitter   { 
-        background-color: #1da1f2; 
+        background-color: #777575; 
          padding: 10px;
         border-radius: 30px;
     }
 
 footer .footer-subscribe ul li a i:hover {
-      transform: scale(1.8);
-      /* box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); */
+      transform: scale(1.5);
+      color: silver;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     }
 
 footer small {
