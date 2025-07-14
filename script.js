@@ -108,3 +108,22 @@ document.getElementById("whatsappForm").addEventListener("submit", function (e) 
 
      const currentYear = new Date().getFullYear();
   document.getElementById("copyright").textContent = `© ${currentYear} PropertyMart. All rights reserved.`;
+
+
+
+//   function abcd(val){
+//    val();
+//   }
+
+//   abcd(function(){
+//     console.log("hey Juber")
+//   });
+
+
+
+
+
+//   let multiply = (a, b) => {
+//     return a*b;
+// }
+// console.log(multiply(1,5)); 
