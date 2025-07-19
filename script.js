@@ -7,8 +7,8 @@ $(function () {
  $('#properties-slider').slick({
       slidesToShow: 4,
       slidesToScroll: 1,
-      prevArrow: '<a href="#" class="slick-arrow slick-prev"><</a>',
-      nextArrow: '<a href="#" class="slick-arrow slick-next">></a>',
+      prevArrow: '<a href="#" class="slick-arrow slick-prev">◀</a>',
+      nextArrow: '<a href="#" class="slick-arrow slick-next">▶</a>',
       responsive: [
           {
               breakpoint: 1100,
@@ -43,8 +43,8 @@ $(function () {
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
-      prevArrow: '<a href="#" class="slick-arrow slick-prev"><</a>',
-      nextArrow: '<a href="#" class="slick-arrow slick-next">></a>'
+      prevArrow: '<a href="#" class="slick-arrow slick-prev"><i class="fa-solid fa-arrow-left"></i></a>',
+      nextArrow: '<a href="#" class="slick-arrow slick-next"><i class="fa-solid fa-arrow-right"></i></a>'
  });
 
  navToggle.on('click', () => {
@@ -110,20 +110,75 @@ document.getElementById("whatsappForm").addEventListener("submit", function (e) 
   document.getElementById("copyright").textContent = `© ${currentYear} PropertyMart. All rights reserved.`;
 
 
+// Thumbnail Section
+// Each main image has its own array of 8 sub-images
+const galleries = [
+  [ "/Property-Images/1bhk/1-first.png", "/Property-Images/1bhk/second.JPG", "/Property-Images/1bhk/third.JPG", "/Property-Images/1bhk/fourth.JPG", "/Property-Images/1bhk/fifth.JPG", "/Property-Images/1bhk/sixth.JPG", "/Property-Images/1bhk/seventh.JPG"],
+  [ "/Property-Images/2bhk/A-first.jpeg", "/Property-Images/2bhk/A-second.jpeg", "/Property-Images/2bhk/A-third.jpeg", "/Property-Images/2bhk/A-fourth.jpeg", "/Property-Images/2bhk/A-fifth.jpeg", "/Property-Images/2bhk/A-sixth.jpeg", "/Property-Images/2bhk/A-seventh.jpeg" ],
+  [ "img3-1.jpg", "img3-2.jpg", "img3-3.jpg", "img3-4.jpg", "img3-5.jpg", "img3-6.jpg", "img3-7.jpg", "img3-8.jpg" ],
+  [ "img4-1.jpg", "img4-2.jpg", "img4-3.jpg", "img4-4.jpg", "img4-5.jpg", "img4-6.jpg", "img4-7.jpg", "img4-8.jpg" ],
+  [ "img5-1.jpg", "img5-2.jpg", "img5-3.jpg", "img5-4.jpg", "img5-5.jpg", "img5-6.jpg", "img5-7.jpg", "img5-8.jpg" ],
+  [ "img6-1.jpg", "img6-2.jpg", "img6-3.jpg", "img6-4.jpg", "img6-5.jpg", "/villa 06.jpg", "img6-7.jpg", "img6-8.jpg" ],
+  [ "img7-1.jpg", "img7-2.jpg", "img7-3.jpg", "img7-4.jpg", "img7-5.jpg", "img7-6.jpg", "img7-7.jpg", "img7-8.jpg" ],
+  [ "img8-1.jpg", "img8-2.jpg", "img8-3.jpg", "img8-4.jpg", "img8-5.jpg", "img8-6.jpg", "img8-7.jpg", "img8-8.jpg" ]
+];
 
-//   function abcd(val){
-//    val();
-//   }
+let currentGallery = [];
+let currentIndex = 0;
 
-//   abcd(function(){
-//     console.log("hey Juber")
-//   });
+function openGallery(mainImageIndex) {
+  currentGallery = galleries[mainImageIndex];
+  currentIndex = 0;
+  document.getElementById("modal").style.display = "block";
+  updateMainImage();
+  loadThumbnails();
+}
 
+function closeGallery() {
+  document.getElementById("modal").style.display = "none";
+}
 
+function changeSlide(step) {
+  currentIndex = (currentIndex + step + currentGallery.length) % currentGallery.length;
+  updateMainImage();
+  highlightActiveThumbnail();
+}
 
+function updateMainImage() {
+  document.getElementById("main-image").src = currentGallery[currentIndex];
+  highlightActiveThumbnail();
+}
 
+function loadThumbnails() {
+  const thumbBar = document.getElementById("thumbnails");
+  thumbBar.innerHTML = "";
 
-//   let multiply = (a, b) => {
-//     return a*b;
-// }
-// console.log(multiply(1,5)); 
+  currentGallery.forEach((src, i) => {
+    const thumb = document.createElement("img");
+    thumb.src = src;
+    thumb.className = i === currentIndex ? "active" : "";
+    thumb.onclick = () => {
+      currentIndex = i;
+      updateMainImage();
+    };
+    thumbBar.appendChild(thumb);
+  });
+}
+
+function highlightActiveThumbnail() {
+  const thumbs = document.querySelectorAll(".thumbnail-bar img");
+  thumbs.forEach((thumb, i) => {
+    thumb.classList.toggle("active", i === currentIndex);
+  });
+}
+
+JavaScript
+function openModal() {
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden'; // Disable scroll
+}
+
+function closeModal() {
+  modal.style.display = 'none';
+  document.body.style.overflow = ''; // Enable scroll again
+}

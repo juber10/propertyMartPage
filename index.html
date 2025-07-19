@@ -17,7 +17,13 @@
     <div id="header-hero-container">
         <header>
             <div class="flex container">
-              <img src="/logo.png" alt="" id="logos"  >
+              <img src="/Accessories/logo.png" alt="logo" id="logos"  >
+               <nav>
+                    <button id="nav-toggle" class="hamburger-menu">
+                        <span class="strip"></span>
+                        <span class="strip"></span>
+                        <span class="strip"></span>
+                    </button>
                     <ul id="nav-menu">
                         <li><a href="#hero" class="active">Home</a></li>
                         <li><a href="#properties">Properties</a></li>
@@ -25,6 +31,7 @@
                         <!-- <li><a href="#services">Services</a></li> -->
                         <li><a href="#testimonials">testimonials</a></li>
                         <li><a href="#contact">Contact</a></li>
+                        <li id="close-flyout"><span class="fas fa-times"></span></li>
                     </ul>
                 </nav>
             </div>
@@ -44,7 +51,7 @@
             <h2>Properties</h2>
             <div id="properties-slider" class="slick">
                 <div>
-                    <img src="/1bhk.png" alt="Property 1" />
+                    <img src="/Accessories/1bhk.png" alt="Property 1" onclick="openGallery(1)"/>
                     <div class="property-details">
                         <p class="price">Mastermind 4</p>
                         <span class="beds">6 beds</span>
@@ -57,7 +64,7 @@
                 </div>
 
                 <div>
-                    <img src="/2bhk.png" alt="Property 1" />
+                    <img src="/Accessories/2bhk.png" alt="Property 2" onclick="openGallery(1)"/>
                     <div class="property-details">
                         <p class="price">Diamond 1, 2, 3</p>
                         <span class="beds">6 beds</span>
@@ -70,7 +77,7 @@
                 </div>
 
                 <div>
-                    <img src="/3bhk.png" alt="Property 1" />
+                    <img src="/Accessories/3bhk.png" alt="Property 3" onclick="openGallery(2)" />
                     <div class="property-details">
                         <p class="price">Emerald 1</p>
                         <span class="beds">6 beds</span>
@@ -83,7 +90,7 @@
                 </div>
 
                 <div>
-                    <img src="/4BHK.png " alt="Property 1" />
+                    <img src="/Accessories/4BHK.png" alt="Property 4" onclick="openGallery(3)" />
                     <div class="property-details">
                         <p class="price">Mystic 1</p>
                         <span class="beds">6 beds</span>
@@ -96,7 +103,7 @@
                 </div>
 
                 <div>
-                    <img src="/villa.jpg" alt="Property 1" />
+                    <img src="/Accessories/villa design.jpg" alt="Property 5" onclick="openGallery(4)" />
                     <div class="property-details">
                         <p class="price">Garden View</p>
                         <span class="beds">2 beds</span>
@@ -108,22 +115,39 @@
                     </div>
                 </div>
             </div>
-
-            <a href="#" target="_blank"><button class="rounded" >View All Property Listings</button></a>
         </div>
     </section>
+     <!-- thumbnail section -->
+<!-- Modal Gallery -->
+<div id="modal" class="modal">
+  <span class="close" onclick="closeGallery()">&times;</span>
+  <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+  <span class="next" onclick="changeSlide(1)">&#10095;</span>
+  
+  <div class="modal-content">
+    <img id="main-image" src="" alt=""> 
+     
+  </div>
+
+  <div class="thumbnail-bar" id="thumbnails">
+    <!-- Thumbnails injected by JS -->
+ </div>
+</div>
+
+<!-- thumbnail secton ends -->
 
     <section id="agents">
         <div class="container">
             <h2>ABOUT</h2>
             <div class="flex">
-                 <p class="large-paragraph">"Hello, I'm Shabbir Alam, The Director of PropertyMart and a seasoned real estate professional with over a decade of experience in the industry since 2010. Specializing in helping clients find their dream homes and make smart property investments, I am dedicated to delivering trusted advice, personalized service, and successful results in every transaction."</p>
                 <div class="card">
-                   
-                    <img src="/shabbir alam.png" alt="Realtor 1" />
+
+                    <img src="/Accessories/shabbir alam.png" alt="Realtor 1" />
                     <h3>Shabir Alam</h3>
                     <p>Director</p>
-                </div>          
+                </div> 
+                 <p class="large-paragraph">"Hello, I'm <span>Shabir</span> Alam, The Director of PropertyMart and a seasoned real estate professional with over a decade of experience in the industry since 2010. Specializing in helping clients find their dream homes and make smart property investments, I am dedicated to delivering trusted advice, personalized service, and successful results in every transaction."</p>
+
             </div>
         </div>
     </section>
@@ -145,8 +169,8 @@ Special thanks to Mr. Shabir Alam for his personalized support and dedication. I
 — Rajesh Mehra, Dubai & Mumbai Investor"</p>
                     </blockquote>
                     <div class="testimonials-caption">
-                        <img src="/client 2.png" alt="Client 7" />
-                        <p>Nick Andros</p>
+                        <img src="/clients/ashutosh singh.jpeg" alt="Client 7" />
+                        <p>Ashutosh Singh</p>
                     </div>
                 </div>
 
@@ -163,8 +187,8 @@ Special thanks to Mr. Shabir Alam for his personalized support and dedication. I
 — Rajesh Mehra, Dubai & Mumbai Investor""</p>
                     </blockquote>
                     <div class="testimonials-caption">
-                        <img src="/female client.png" alt="Client 7" />
-                        <p>Larry Underwood</p>
+                        <img src="/clients/bisht pooja.jpeg" alt="Client 7" />
+                        <p>Bisht Pooja</p>
                     </div>
                 </div>
 
@@ -181,11 +205,97 @@ Special thanks to Mr. Shabir Alam for his personalized support and dedication. I
 — Rajesh Mehra, Dubai & Mumbai Investor""</p>
                     </blockquote>
                     <div class="testimonials-caption">
-                        <img src="/client.png" alt="Client 7" />
-                        <p>Fran Goldsmith</p>
+                        <img src="/clients/kunal.jpeg" alt="Client 7" />
+                        <p>Kunal</p>
+                    </div>
+                </div>
+                <div>
+                    <blockquote>
+                        <p>""They made my dream home a reality!""
+
+I had an amazing experience with Propertymart Real Estate. From the very beginning, their team was incredibly professional, transparent, and attentive to every detail. They understood my requirements perfectly and helped me find the ideal property within my budget.
+
+What stood out the most was their honesty and knowledge of the local market—they guided me through every step, from property visits to documentation, making the entire process smooth and stress-free.
+
+Special thanks to Mr. Shabir Alam for his personalized support and dedication. I highly recommend Propertymart to anyone looking for a reliable and trustworthy real estate partner.
+
+— Rajesh Mehra, Dubai & Mumbai Investor""</p>
+                    </blockquote>
+                    <div class="testimonials-caption">
+                        <img src="/clients/pratiksha pandey.jpeg" alt="Client 7" />
+                        <p>Pratiksha Pandey</p>
+                    </div>
+                </div>
+                <div>
+                    <blockquote>
+                        <p>""They made my dream home a reality!""
+
+I had an amazing experience with Propertymart Real Estate. From the very beginning, their team was incredibly professional, transparent, and attentive to every detail. They understood my requirements perfectly and helped me find the ideal property within my budget.
+
+What stood out the most was their honesty and knowledge of the local market—they guided me through every step, from property visits to documentation, making the entire process smooth and stress-free.
+
+Special thanks to Mr. Shabir Alam for his personalized support and dedication. I highly recommend Propertymart to anyone looking for a reliable and trustworthy real estate partner.
+
+— Rajesh Mehra, Dubai & Mumbai Investor""</p>
+                    </blockquote>
+                    <div class="testimonials-caption">
+                        <img src="/clients/priya sharma.png" alt="Client 7" />
+                        <p>Priya Sharma</p>
+                    </div>
+                </div>
+                <div>
+                    <blockquote>
+                        <p>""They made my dream home a reality!""
+
+I had an amazing experience with Propertymart Real Estate. From the very beginning, their team was incredibly professional, transparent, and attentive to every detail. They understood my requirements perfectly and helped me find the ideal property within my budget.
+
+What stood out the most was their honesty and knowledge of the local market—they guided me through every step, from property visits to documentation, making the entire process smooth and stress-free.
+
+Special thanks to Mr. Shabir Alam for his personalized support and dedication. I highly recommend Propertymart to anyone looking for a reliable and trustworthy real estate partner.
+
+— Rajesh Mehra, Dubai & Mumbai Investor""</p>
+                    </blockquote>
+                    <div class="testimonials-caption">
+                        <img src="/clients/ruby wani.jpeg" alt="Client 7" />
+                        <p>Ruby Wani</p>
+                    </div>
+                </div>
+                <div>
+                    <blockquote>
+                        <p>""They made my dream home a reality!""
+
+I had an amazing experience with Propertymart Real Estate. From the very beginning, their team was incredibly professional, transparent, and attentive to every detail. They understood my requirements perfectly and helped me find the ideal property within my budget.
+
+What stood out the most was their honesty and knowledge of the local market—they guided me through every step, from property visits to documentation, making the entire process smooth and stress-free.
+
+Special thanks to Mr. Shabir Alam for his personalized support and dedication. I highly recommend Propertymart to anyone looking for a reliable and trustworthy real estate partner.
+
+— Rajesh Mehra, Dubai & Mumbai Investor""</p>
+                    </blockquote>
+                    <div class="testimonials-caption">
+                        <img src="/clients/sameedha.jpeg" alt="Client 7" />
+                        <p>Sameedha</p>
+                    </div>
+                </div>
+                <div>
+                    <blockquote>
+                        <p>""They made my dream home a reality!""
+
+I had an amazing experience with Propertymart Real Estate. From the very beginning, their team was incredibly professional, transparent, and attentive to every detail. They understood my requirements perfectly and helped me find the ideal property within my budget.
+
+What stood out the most was their honesty and knowledge of the local market—they guided me through every step, from property visits to documentation, making the entire process smooth and stress-free.
+
+Special thanks to Mr. Shabir Alam for his personalized support and dedication. I highly recommend Propertymart to anyone looking for a reliable and trustworthy real estate partner.
+
+— Rajesh Mehra, Dubai & Mumbai Investor""</p>
+                    </blockquote>
+                    <div class="testimonials-caption">
+                        <img src="/clients/shamsad.jpeg" alt="Client 7" />
+                        <p>Shamsad</p>
                     </div>
                 </div>
             </div>
+            <h4>Slide to See >> </h4>
         </div>
     </section>
 
