@@ -253,7 +253,9 @@ header ul.is-sticky li a.active {
     display: block;
     cursor: pointer;
 }
-
+#properties-slider img:nth-child(9) {
+    height: 169px;
+}
 #properties-slider .property-details {
     padding: 1rem;
 }
@@ -1008,6 +1010,14 @@ footer small {
     #properties button.rounded {
         width: 250px;
     }
+    .prev {
+  display: none !important;
+}
+
+  .next {
+  display: none !important;
+
+}
 
     #testimonials {
         margin-bottom: 4rem;
@@ -1069,6 +1079,14 @@ footer small {
   nav ul {
     width: 200px;
   }
+  #modal .prev {
+  display: none !important;
+}
+
+  #modal .next {
+  display: none !important;
+
+}
   #testimonials {
     height: 60%;
     width:90%;

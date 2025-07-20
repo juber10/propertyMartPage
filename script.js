@@ -113,14 +113,15 @@ document.getElementById("whatsappForm").addEventListener("submit", function (e) 
 // Thumbnail Section
 // Each main image has its own array of 8 sub-images
 const galleries = [
-  [ "/Property-Images/1bhk/1-first.png", "/Property-Images/1bhk/second.JPG", "/Property-Images/1bhk/third.JPG", "/Property-Images/1bhk/fourth.JPG", "/Property-Images/1bhk/fifth.JPG", "/Property-Images/1bhk/sixth.JPG", "/Property-Images/1bhk/seventh.JPG"],
-  [ "/Property-Images/2bhk/A-first.jpeg", "/Property-Images/2bhk/A-second.jpeg", "/Property-Images/2bhk/A-third.jpeg", "/Property-Images/2bhk/A-fourth.jpeg", "/Property-Images/2bhk/A-fifth.jpeg", "/Property-Images/2bhk/A-sixth.jpeg", "/Property-Images/2bhk/A-seventh.jpeg" ],
-  [ "img3-1.jpg", "img3-2.jpg", "img3-3.jpg", "img3-4.jpg", "img3-5.jpg", "img3-6.jpg", "img3-7.jpg", "img3-8.jpg" ],
-  [ "img4-1.jpg", "img4-2.jpg", "img4-3.jpg", "img4-4.jpg", "img4-5.jpg", "img4-6.jpg", "img4-7.jpg", "img4-8.jpg" ],
-  [ "img5-1.jpg", "img5-2.jpg", "img5-3.jpg", "img5-4.jpg", "img5-5.jpg", "img5-6.jpg", "img5-7.jpg", "img5-8.jpg" ],
-  [ "img6-1.jpg", "img6-2.jpg", "img6-3.jpg", "img6-4.jpg", "img6-5.jpg", "/villa 06.jpg", "img6-7.jpg", "img6-8.jpg" ],
-  [ "img7-1.jpg", "img7-2.jpg", "img7-3.jpg", "img7-4.jpg", "img7-5.jpg", "img7-6.jpg", "img7-7.jpg", "img7-8.jpg" ],
-  [ "img8-1.jpg", "img8-2.jpg", "img8-3.jpg", "img8-4.jpg", "img8-5.jpg", "img8-6.jpg", "img8-7.jpg", "img8-8.jpg" ]
+  [ "Properties-images/1bhk/1.JPG", "Properties-images/1bhk/2.JPG", "Properties-images/1bhk/3.JPG", "Properties-images/1bhk/4.JPG", "Properties-images/1bhk/5.JPG", "Properties-images/1bhk/6.JPG", "Properties-images/1bhk/7.JPG", "Properties-images/1bhk/8.JPG" ], // Property 1(1BHK)
+  ["Properties-images/1bhk fully furnished/A.JPG", "Properties-images/1bhk fully furnished/B.JPG", "Properties-images/1bhk fully furnished/C.JPG", "Properties-images/1bhk fully furnished/D.JPG", "Properties-images/1bhk fully furnished/E.JPG", "Properties-images/1bhk fully furnished/F.JPG", "Properties-images/1bhk fully furnished/G.JPG", ], // Property 2 (1BHK Fully furnished)
+ [ "Properties-images/1bhk fully loaded/Q1.JPG", "Properties-images/1bhk fully loaded/Q2.JPG", "Properties-images/1bhk fully loaded/Q3.JPG", "Properties-images/1bhk fully loaded/Q4.JPG", "Properties-images/1bhk fully loaded/Q5.JPG", "Properties-images/1bhk fully loaded/Q6.JPG", "Properties-images/1bhk fully loaded/Q7.JPG", "Properties-images/1bhk fully loaded/Q8.JPG" ],// Property 3 (1bhk fully loaded)
+  [ "Properties-images/1bhk rent full loaded/W1.JPG", "Properties-images/1bhk rent full loaded/W2.JPG", "Properties-images/1bhk rent full loaded/W3.JPG", "Properties-images/1bhk rent full loaded/W5.JPG", ], // Property 4 (1BHK Rent Fully Loaded)
+  [ "Properties-images/2bhk/T1.JPG", "Properties-images/2bhk/T2.JPG", "Properties-images/2bhk/T3.JPG", "Properties-images/2bhk/T4.JPG", "Properties-images/2bhk/T5.JPG", "Properties-images/2bhk/T6.JPG", "Properties-images/2bhk/T7.JPG", "Properties-images/2bhk/T8.JPG",  "Properties-images/2bhk/T9.JPG"], // Property 5 (2BHK)
+  [ "Properties-images/3bhk/One.JPG", "Properties-images/3bhk/Two.JPG", "Properties-images/3bhk/Three.JPG", "Properties-images/3bhk/Four.JPG", "Properties-images/3bhk/Five.JPG", "Properties-images/3bhk/Six.JPG", "Properties-images/3bhk/Seven.JPG", "Properties-images/3bhk/Eight.JPG" ],// Property 6 (3BHK)
+  [ "Properties-images/1bhk Villa/1-first.png", "Properties-images/1bhk Villa/third.JPG", "Properties-images/1bhk Villa/fourth.JPG", "Properties-images/1bhk Villa/fifth.JPG", "Properties-images/1bhk Villa/sixth.JPG", "Properties-images/1bhk Villa/seventh.JPG",],// Property 7 (1bhk Villa)
+  [ "Properties-images/palms 1 1bhk/A1.JPG", "Properties-images/palms 1 1bhk/A2.JPG", "Properties-images/palms 1 1bhk/A3.JPG", "Properties-images/palms 1 1bhk/A4.JPG", "Properties-images/palms 1 1bhk/A5.JPG", "Properties-images/palms 1 1bhk/A6.JPG", "Properties-images/palms 1 1bhk/A7.JPG", "Properties-images/palms 1 1bhk/A8.JPG" ], // Property 8 (5BHK)
+  [ "Properties-images/1rk/E1.JPG", "Properties-images/1rk/E2.JPG", "Properties-images/1rk/E3.JPG", "Properties-images/1rk/E4.JPG", "Properties-images/1rk/E5.JPG", "Properties-images/1rk/E6.JPG", "Properties-images/1rk/E7.JPG", "Properties-images/1rk/E8.JPG" ] // Property 9 (5BHK)
 ];
 
 let currentGallery = [];
