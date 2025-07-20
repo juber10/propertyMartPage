@@ -121,7 +121,7 @@ const galleries = [
   [ "Properties-images/3bhk/One.JPG", "Properties-images/3bhk/Two.JPG", "Properties-images/3bhk/Three.JPG", "Properties-images/3bhk/Four.JPG", "Properties-images/3bhk/Five.JPG", "Properties-images/3bhk/Six.JPG", "Properties-images/3bhk/Seven.JPG", "Properties-images/3bhk/Eight.JPG" ],// Property 6 (3BHK)
   [ "Properties-images/1bhk Villa/1-first.png", "Properties-images/1bhk Villa/third.JPG", "Properties-images/1bhk Villa/fourth.JPG", "Properties-images/1bhk Villa/fifth.JPG", "Properties-images/1bhk Villa/sixth.JPG", "Properties-images/1bhk Villa/seventh.JPG",],// Property 7 (1bhk Villa)
   [ "Properties-images/palms 1 1bhk/A1.JPG", "Properties-images/palms 1 1bhk/A2.JPG", "Properties-images/palms 1 1bhk/A3.JPG", "Properties-images/palms 1 1bhk/A4.JPG", "Properties-images/palms 1 1bhk/A5.JPG", "Properties-images/palms 1 1bhk/A6.JPG", "Properties-images/palms 1 1bhk/A7.JPG", "Properties-images/palms 1 1bhk/A8.JPG" ], // Property 8 (5BHK)
-  [ "Properties-images/1rk/E1.JPG", "Properties-images/1rk/E2.JPG", "Properties-images/1rk/E3.JPG", "Properties-images/1rk/E4.JPG", "Properties-images/1rk/E5.JPG", "Properties-images/1rk/E6.JPG", "Properties-images/1rk/E7.JPG", "Properties-images/1rk/E8.JPG" ] // Property 9 (5BHK)
+  [ "Properties-images/1rk/E1.JPG", "Properties-images/1rk/E2.JPG", "Properties-images/1rk/E3.JPG", "Properties-images/1rk/E4.JPG", "Properties-images/1rk/E5.JPG", "Properties-images/1rk/E6.JPG", "Properties-images/1rk/E7.JPG", "Properties-images/1rk/E8.JPG" ] // Property 9 (1RK)
 ];
 
 let currentGallery = [];
@@ -173,7 +173,7 @@ function highlightActiveThumbnail() {
   });
 }
 
-JavaScript
+
 function openModal() {
   modal.style.display = 'flex';
   document.body.style.overflow = 'hidden'; // Disable scroll
