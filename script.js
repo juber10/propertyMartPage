@@ -86,6 +86,52 @@ $(function () {
 });
 
 
+  const images = [
+    'url("bkg/royals1.avif")',
+    'url("bkg/royals2.webp")',
+    'url("bkg/royals3.avif")'
+  ];
+
+  const bg1 = document.getElementById('bg1');
+  const bg2 = document.getElementById('bg2');
+
+  let current = bg1;
+  let next = bg2;
+  let index = 0;
+
+  // Initial image
+  current.style.backgroundImage = images[index];
+  current.style.opacity = 1;
+  current.style.transform = 'translateX(0)';
+
+  setInterval(() => {
+    index = (index + 1) % images.length;
+
+    // Next image setup: slide in from right with faster parallax
+    next.style.backgroundImage = images[index];
+    next.style.opacity = 1;
+    next.style.transform = 'translateX(0)';
+
+    // Current image: slide out to left slowly
+    current.style.opacity = 0;
+    current.style.transform = 'translateX(-10%)';
+
+    // After transition, reset current for reuse
+    setTimeout(() => {
+      current.style.transition = 'none';
+      current.style.opacity = 0;
+      current.style.transform = 'translateX(10%)'; // reset from right
+
+      // Swap current and next
+      [current, next] = [next, current];
+
+      // Re-enable transitions
+      setTimeout(() => {
+        current.style.transition = 'opacity 1.5s ease-in-out, transform 1.5s ease-in-out';
+      }, 50);
+    }, 1500); // matches transition time
+  }, 4000); // total cycle (3s visible + 1s transition)
+
 
 
 document.getElementById("whatsappForm").addEventListener("submit", function (e) {

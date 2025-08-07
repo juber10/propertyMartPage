@@ -168,24 +168,50 @@ header ul.is-sticky li a.active {
 /* end: header styles */
 
 /* start: hero section styles */
+
 #hero {
-    background: url(/Accessories/imperial.jpeg) center center no-repeat;
-    background-size: cover;
+    /* background: url(/Accessories/imperial.jpeg) center center no-repeat; */
+    /* background-size: cover; */
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
     height: 100%;
     width: 100%;
+    overflow: hidden;
+}
+/* Background layers */
+.bg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110%; /* slightly larger for parallax depth */
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  opacity: 0;
+  transform: translateX(0);
+  transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
 }
 
+/* Dark overlay */
+.dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:  rgba(0, 0, 0, 0.35);
+  z-index: 999;
+}
 #hero .fade {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    /* background: rgba(52, 58, 64, 0.9); */
+    background: rgba(0, 0, 0, 0.4);
     z-index: 1;
 }
 
